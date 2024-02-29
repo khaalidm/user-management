@@ -1,4 +1,4 @@
-# user Management Setup
+# User Management Setup
 - Install php
 - Install composer
 - Run mysql server on local host, details can be found `.env`
