@@ -15,6 +15,7 @@ class WorkerFactory extends Factory
             'name' => $this->faker->name,
             'surname' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
+            'id_number' =>  $this->faker->unique()->randomNumber(8, true) . $this->faker->unique()->randomNumber(5, true) ,
             'phone' => $this->faker->phoneNumber,
             'birth_date' => $this->faker->date(),
             'language' => $this->faker->randomElement(['english', 'spanish', 'french', 'german', 'italian']),

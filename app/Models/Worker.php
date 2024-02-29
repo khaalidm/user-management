@@ -18,6 +18,7 @@ class Worker extends Model
         'surname',
         'email',
         'phone',
+        'id_number',
         'birth_date',
         'language',
         'interests',

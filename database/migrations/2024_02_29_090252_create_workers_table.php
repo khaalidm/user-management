@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable(false);
             $table->string('surname')->nullable(false);
-            $table->string('email')->nullable(false);
+            $table->string('email')->nullable(false)->unique();
+            $table->string('id_number')->nullable(false)->unique();
             $table->string('phone')->nullable(false);
             $table->dateTime('birth_date')->nullable(false);
             $table->enum('language', ['english', 'spanish', 'french', 'german', 'italian'])->nullable(false);

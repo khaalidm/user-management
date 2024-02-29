@@ -42,6 +42,10 @@ import { Head } from '@inertiajs/vue3';
                                         <input type="email" id="email" v-model="selectedWorker.email" />
                                     </div>
                                     <div class="form-group">
+                                        <label for="idNumber">ID Number (13 digits):</label>
+                                        <input type="text" id="idNumber" v-model="selectedWorker.id_number" />
+                                    </div>
+                                    <div class="form-group">
                                         <label for="phone">Phone:</label>
                                         <input type="text" id="phone" v-model="selectedWorker.phone" />
                                     </div>

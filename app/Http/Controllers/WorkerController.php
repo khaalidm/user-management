@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendWelcomeEmail;
 use App\Models\Worker;
 use Illuminate\Http\Request;
 
@@ -21,6 +22,9 @@ class WorkerController extends Controller
     public function store(Request $request)
     {
         $worker = Worker::create($request->all());
+
+        // This will dispatch the job to the queue
+        SendWelcomeEmail::dispatch($worker);
 
         return response()->json($worker, 201);
     }
