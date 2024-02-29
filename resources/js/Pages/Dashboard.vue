@@ -45,6 +45,31 @@ import { Head } from '@inertiajs/vue3';
                                         <label for="phone">Phone:</label>
                                         <input type="tel" id="phone" v-model="selectedWorker.phone" />
                                     </div>
+                                    <div class="form-group">
+                                        <label for="language">Language:</label>
+                                        <select id="language" v-model="selectedWorker.language">
+                                            <option value="english">English</option>
+                                            <option value="spanish">Spanish</option>
+                                            <option value="french">French</option>
+                                            <option value="german">German</option>
+                                            <option value="italian">Italian</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="hobbies">Interests:</label>
+                                        <select id="hobbies" multiple v-model="selectedWorker.interests">
+                                            <option value="reading">Reading</option>
+                                            <option value="cooking">Cooking</option>
+                                            <option value="hiking">Hiking</option>
+                                            <option value="gardening">Gardening</option>
+                                            <option value="painting">Painting</option>
+                                            <option value="photography">Photography</option>
+                                            <option value="knitting">Knitting</option>
+                                            <option value="dancing">Dancing</option>
+                                            <option value="traveling">Traveling</option>
+                                            <option value="playing music">Playing Music</option>
+                                        </select>
+                                    </div>
                                     <!-- Add more fields for other worker details here -->
                                     <button type="submit" class="update-btn">Update Worker</button>
                                 </form>
@@ -192,6 +217,38 @@ input[type="email"] {
 }
 
 .update-btn:hover {
+    background-color: #45a049;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select[multiple] {
+    height: 150px; /* Set a fixed height for the dropdown */
+}
+
+option {
+    padding: 10px;
+}
+
+select:hover {
+    border-color: #aaa; /* Change border color on hover */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
     background-color: #45a049;
 }
 </style>
