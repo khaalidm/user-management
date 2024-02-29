@@ -64,7 +64,13 @@ defineProps({
                 </svg>
             </div>
 
+            <div class="text-center mt-12">
+                <h1 class="text-4xl font-bold text-gray-900 dark:text-gray-100">User Management App!</h1>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                    making use of Vue 3  using Inertia.js.
+                </p>
 
+            </div>
 
             <div class="flex justify-center mt-16 px-6 sm:items-center sm:justify-between">
                 <div class="text-center text-sm sm:text-start">&nbsp;</div>
@@ -74,7 +80,9 @@ defineProps({
                 </div>
             </div>
         </div>
+
     </div>
+    <div/>
 </template>
 
 <style>
