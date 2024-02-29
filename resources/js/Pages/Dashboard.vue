@@ -4,11 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Worker Management" />
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Worker Management</h2>
         </template>
 
         <div class="py-12">
@@ -43,7 +43,7 @@ import { Head } from '@inertiajs/vue3';
                                     </div>
                                     <div class="form-group">
                                         <label for="phone">Phone:</label>
-                                        <input type="tel" id="phone" v-model="selectedWorker.phone" />
+                                        <input type="text" id="phone" v-model="selectedWorker.phone" />
                                     </div>
                                     <div class="form-group">
                                         <label for="language">Language:</label>
@@ -56,21 +56,11 @@ import { Head } from '@inertiajs/vue3';
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="hobbies">Interests:</label>
-                                        <select id="hobbies" multiple v-model="selectedWorker.interests">
-                                            <option value="reading">Reading</option>
-                                            <option value="cooking">Cooking</option>
-                                            <option value="hiking">Hiking</option>
-                                            <option value="gardening">Gardening</option>
-                                            <option value="painting">Painting</option>
-                                            <option value="photography">Photography</option>
-                                            <option value="knitting">Knitting</option>
-                                            <option value="dancing">Dancing</option>
-                                            <option value="traveling">Traveling</option>
-                                            <option value="playing music">Playing Music</option>
+                                        <label for="hobbies">Hobbies:</label>
+                                        <select id="hobbies" multiple v-model="selectedWorker.hobbies">
+                                            <option v-for="hobby in hobbies" :key="hobby" :value="hobby">{{ hobby }}</option>
                                         </select>
                                     </div>
-                                    <!-- Add more fields for other worker details here -->
                                     <button type="submit" class="update-btn">Update Worker</button>
                                 </form>
                             </div>
@@ -93,7 +83,8 @@ export default {
     data() {
         return {
             workers: [],
-            selectedWorker: null
+            selectedWorker: null,
+            hobbies: ['Reading', 'Cooking', 'Hiking', 'Gardening', 'Painting', 'Photography', 'Knitting', 'Dancing', 'Traveling', 'Playing Music']
         };
     },
     mounted() {
@@ -195,34 +186,26 @@ export default {
 }
 
 .form-group {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="tel"],
-input[type="email"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.update-btn {
-    padding: 8px 16px;
-    background-color: #4caf50;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.update-btn:hover {
-    background-color: #45a049;
+label {
+    display: block;
+    margin-bottom: 5px;
 }
 
 select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%; /* Set width to 100% */
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
